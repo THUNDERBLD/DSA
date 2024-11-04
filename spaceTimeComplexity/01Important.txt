@@ -1,0 +1,184 @@
+// Imp 
+1. we ignore all the constants
+2. Instead of using Master's Theorem, try akra bazzi formula for finding the time Complexity of the divide and conquor recursion realations
+
+
+Time complexity
+
+Time complexity of the code != time taken by the code to exicute...
+In reality the time complexity is the mathematical function(it tells us how the time will grow as the input grows) and its graph
+
+Better time complexity:-
+       O(1)       >     O(log(n))        >      O(N)        >     O(N^2)
+(constant/formula)    (binaySearch)       (LinearSearch)       (dual for loops)
+
+So what do we consider when thinking about time complexity
+1. we always look for the worst case(large data) time complexity.
+2. Even tho the value of actual time is different but all the graphs grows according to there relations 
+    eg -> y = x, y = 2x, y = 3x all are considered as Linear time complexity therefore all are same, so we dont worry about the actual time 
+
+
+Space complexity
+
+The space complexity is the input size u are taking plus the extra space algorithem filling(auxiliary space). and we always talks about the auxiliary space
+
+
+Questions for stronging the concept 
+1. what is the time complexity of O(n^3 + log(n))?
+Ans. The time complexity is O(n^3) because we always takes only the larger data in time complexity. Always ignore less dominating terms
+
+2. what is the time complexity of O(2n^3 + 6n^2 + 10n + 100)?
+Ans. The time complexity is O(n^3).
+
+3. What is big O(n) means?
+Ans. It means that it is a upper bound of the algorithm ie. no matter what happens, the time will not excide more than this.
+
+4. What is big Ω(n) means?
+Ans. It is actually opposite of O(n), a lower bound of the algorithm ie. no matter what happens, the time will not goes less than this.
+
+5. What is big θ(n) means?
+Ans. It is actually the average of both upper and lower bound of the algorithm ie. it will give the approx time for that algorithm to complete.
+
+6. What is the difference between the big O and small o Notation of the algorithm?
+Ans. big O means f(function like n^2) <= g(function like n^2) and small o means f < g. both are defining the upper bound but small o is the stronger statement.
+
+7. What is the difference between the big Ω and small Ω Notation of the algorithm?
+Ans. big Ω means f >= g and small Ω means f > g. both are defining the lower bound but small Ω is the stronger statement
+
+
+                            Array Searching Algorithm
+LinearSearch -> time complexity = O(n) and space complexity = O(1)
+BinaySearch -> time complexity = O(log(n)) and space complexity = O(1)
+
+
+                            Array Sorting Algorithms
+Algorithm	     Time Complexity	                             Space Complexity
+
+                        Best	      Average          Worst	         Worst
+Quicksort	     Ω(n log(n))    Θ(n log(n))        O(n^2)	       O(log(n))
+Mergesort	     Ω(n log(n))    Θ(n log(n))     O(n log(n))    	 O(n)
+Timsort	                Ω(n)	    Θ(n log(n))     O(n log(n))	         O(n)
+Heapsort	     Ω(n log(n))    Θ(n log(n))     O(n log(n))	         O(1)
+Bubble Sort	        Ω(n)	      Θ(n^2)	       O(n^2)	         O(1)
+Insertion Sort          Ω(n)	      Θ(n^2)	       O(n^2)            O(1)
+Selection Sort         Ω(n^2)	      Θ(n^2)	       O(n^2)	         O(1)
+Tree Sort	     Ω(n log(n))    Θ(n log(n))        O(n^2)	         O(n)
+Shell Sort	     Ω(n log(n))    Θ(n(log(n))^2)   O(n(log(n))^2)	 O(1)
+Bucket Sort	       Ω(n+k)	      Θ(n+k)	       O(n^2)	         O(n)
+Radix Sort	       Ω(nk)	      Θ(nk)	       O(nk)	        O(n+k)
+Counting Sort          Ω(n+k)	      Θ(n+k)	       O(n+k)	         O(k)
+Cubesort	        Ω(n)	    Θ(n log(n))     O(n log(n))	         O(n)
+
+
+
+Akra Bazzi formula  -> used for divide and conquor Recurrences
+
+[F(x) = Θ(x^p + x^p*( from 1 to x ∫ g(u)/u^(p+1) du)) ]         where g(u) is constant C and anything that is constant can be writen as O(1), therfore g(u) can be writen as O(1)
+                                                                let suppose the equation is 2F(N/2) + N-1          here N-1 is the constant ie. g(x) and 2 is (a) and 1/2 is (b)  
+
+find p  -->  [a1*b1^p + a2*b2^p + ...... + an*bn^p = 1]      ie.     [(from i=1 to n) ∑ of ai*bi^p = 1]
+// NOTE : when p < power of g(x) then answer = g(x)          // no need to integrate final answer is g(x)
+
+eg.  find the time complexity of F(n) = 2F(n/2) + (n - 1) 
+Ans.     a = 2, b = 1/2, g(c) = n-1
+        first find the p -> a1*b1^p = 1
+                        2*(1/2)^p = 1
+                therefore p = 1;
+        now find F(x)
+            F(x) = Θ(x^p + x^p*( from 1 to x ∫ g(u)/u^(p+1) du))
+            F(x) = Θ(x^1 + x^1*( from 1 to x ∫ (N-1)/u^(1+1) du))          we consider u -1 from N -1
+            F(x) = Θ(x + x*( from 1 to x ∫ u-1/u^(2) du))
+            F(x) = Θ(x + x*( from 1 to x ∫ 1/u - 1/u^2 du))
+            F(x) = Θ(x + x*( [log(u)] from 1 to x + [u^-1] from 1 to x))
+            F(x) = Θ(x + x*( [log(x)] + [1/x - 1]))
+            F(x) = Θ(x + xlog(x) + x/x - x)
+            F(x) = Θ(xlog(x) + 1)                                           we will ignore the +1
+            therefore final answer is 
+            F(x) = Θ(xlog(x))
+
+
+another eg.  find the time complexity of F(n) = 2*F(n/2) + 8/9*F(3/4*(n)) + (n^2) 
+Ans.     a1 = 2, a2 = 8/9, b1 = 1/2, b2 = 3/4, g(c) = n^2
+        first find the p -> a1*b1^p + a2*b2*p = 1
+                        2*(1/2)^p + 8/9*(3/4)^p = 1
+                    if we use hit and trial then we put p = 2
+                    then 2*(1/2)^2 + 8/9*(3/4)^2 = 1
+                         2*(1/4) + 8/9*(9/16) = 1
+                         1/2 + 1/2 = 1
+                therefore p = 2;
+        now find F(x)
+            F(x) = Θ(x^p + x^p*( from 1 to x ∫ g(u)/u^(p+1) du))
+            F(x) = Θ(x^2 + x^2*( from 1 to x ∫ (n^2)/u^(2+1) du))          we consider u -1 from N -1
+            F(x) = Θ(x^2 + x^2*( from 1 to x ∫ u^2/u^(3) du))
+            F(x) = Θ(x^2 + x^2*( from 1 to x ∫ 1/u du))
+            F(x) = Θ(x^2 + x^2*( [log(u)] from 1 to x))
+            F(x) = Θ(x^2 + x^2*( [log(x)] - [log(1)]))
+            F(x) = Θ(x^2 + x^2 (log(x) - 0))
+            F(x) = Θ(x^2 * (log(x)))                                           we will ignore the x^2 from Θ(x^2 + x^2 (log(x) - 0)) becasue it is less dominating term than (x^2 *(log(x)))
+            therefore final answer is 
+            F(x) = Θ(x^2 *(log(x)))
+            
+
+// if u cannot find the value of p 
+eg.  find the time complexity of F(n) = 3F(x/3) + 4F(x/4) + (x^2) 
+Ans.     a1 = 3, a2 = 4, b1 = 1/3, b2 = 1/4, g(c) = n^2
+        first find the p -> a1*b1^p + a2*b2*p = 1
+                        3*(1/3)^p + 4*(1/4)^p = 1
+                    if we use hit and trial then we put p = 1
+                    then  3*(1/3)^1 + 4*(1/4)^1 = 1
+                           1 + 1 = 1
+                             2 > 1    // try another number which is greater than 1 because this time ans is greater than 1, therefore in order to reduce the ans we have to increase the denominator
+                    if we use hit and trial then we put p = 2
+                    then  3*(1/3)^2 + 4*(1/4)^2 = 1
+                           1/3 + 1/4 = 1
+                           7/12 < 1   // this time the denominator is smaller than, but now we know p is smaller than 2 and p is larger than 1, therefore range of p is (1 to 2)
+                                     // NOTE : when p < power of g(x) then answer = g(x)
+
+                    And here p is actually < power of g(x) 
+                    therefore the answer = g(x)
+                    that means final answer = n^2    // no need to compute any further, final time complexity is n^2 
+
+
+
+Solving Linear Recurrences
+
+Form -> F(x) = a1*F(x-1) + a2*F(x-2) + ..... + an*F(x-n)    ie.    [(from i=1 to n) ∑ of ai*F(x-i)]
+ 
+Solving for fibonacci number F(n) = F(n-1) + F(n-2) 
+    F(n) = F(n-1) + F(n-2) --------------------(1)
+Put F(n) = (alpha)^n  for some constant alpha 
+    (alpha)^n = (alpha)^(n-1) + (alpha)^(n-2)
+    (alpha)^n - (alpha)^(n-1) - (alpha)^(n-2) = 0         // this is also knows as character staic equation of Recurrences 
+    on dividing the entire equation by (alpha)^(n-2)
+    (alpha)^(2) - (alpha)^(1) - 1 = 0           // as you can see that this is a quadratic equation therefore we need to find the roots of this
+    (alpha) = (1 +- sqrt(5))/2                 // by using the formula   roots = (-b +- sqrt(b^2 - 4ac))/2a 
+    therefore one roots are 
+    (alpha) = (1 + sqrt(5))/2    and    (alpha) = (1 - sqrt(5))/2  
+
+now we can put the values of (alpha) in eq -> F(n) = c1*(alpha)^n + c2*(alpha)^n
+on putting the value of (alpha) in above eq 
+    F(n) = c1*((1 + sqrt(5))/2)^n + c2*((1 - sqrt(5))/2)^n     ---------------------(2)
+
+// FACT : no. of zeroes = no. of answers
+hence we have two roots therefore we have two answers already
+therefore if we put F(0) = 0 and F(1) = 1 then we will get two values
+
+F(0) = c1 + c2 = 0     ->    c2 = -c1     -----------------------(3) 
+
+F(1) = c1*((1 + sqrt(5))/2)^1 + c2*((1 - sqrt(5))/2)^1
+  1  = c1*((1 + sqrt(5))/2) + c2*((1 - sqrt(5))/2)
+  1  = c1*((1 + sqrt(5))/2) + c2*((1 - sqrt(5))/2)
+  1  = c1*((1 + sqrt(5))/2) - c1*((1 - sqrt(5))/2)        // from equation 3
+  2  = c1*(1 + sqrt(5)) - c1*(1 - sqrt(5))
+  2  = c1 + c1*sqrt(5) - c1 + c1*sqrt(5)
+  2  = 2*c1*sqrt(5)
+  c1 = 1/sqrt(5)         therefore    c2 =  -1/sqrt(5)
+
+on putting the values of c1 and c2 into equation 2
+F(n) = 1/sqrt(5)*((1 + sqrt(5))/2)^n - 1/sqrt(5)*((1 - sqrt(5))/2)^n         /// this is the formula for nth fibonacci number
+lets simplify this
+F(n) = 1/sqrt(5)*(((1 + sqrt(5))/2)^n)                             // we will ignore ((1 - sqrt(5))/2)^n becasue as we know as the value of n increases, then this value only going towards zero and we always ignore smaller terms in time complexity.
+
+// The time complexity of the fibonacci number :-
+O(((1 + sqrt(5))/2)^n)   =    O((1.618)^n)       // we have ignored the constants and less dominating terms in time complexity
+((1 + sqrt(5))/2) -> this part is also knows as golden ratio and its actual value is 1.618

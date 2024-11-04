@@ -1,0 +1,17 @@
+How to approach a pattern question...
+firstly must know about 2DArrays/Matrix 
+
+  steps:--
+1. Run the outer forloop the number of times u are having the lines(*)
+2. How many column are there with each row
+3. what do u need to print in pattern
+4. try to find the formula which is relating rows and columns
+
+
+
+
+
+
+
+write the program for the salary of the employee
+conditions basic salary => 10000, HRA => 20%, DA = 80%

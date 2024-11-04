@@ -1,0 +1,67 @@
+// only pan and paper can make u pro in recursion
+
+Recursion means a function calling itself...
+
+all the function call go to the stack memory and the main function is the first function to go into stack and last function to come out of the stack
+while the function is not finished exicuting, till that time it will remain in the stack and after execution it is removed from the stack and flow of program restore to where that function was called...
+Recursion have space complexity of O(n) because if the 1000 number are going to print then 1000 times the function call will happen
+therefore the space complexity of Recursion is not constant, where as the itrations have constant space complexity because for every loop there is no extra memory is used...
+
+// IMP
+Remember in recursion after completion of all the call backs, the backtracking occurred and after backtracking the next line code will execute..
+Backtracking pura hona ka bad, us he function ki agli line execute hogi jis line ka user function calling itself ho raha hoga
+
+
+Base condition
+
+if there is no base condition then function again and again goes into the stack which will fill the memory of the stack
+after a certain point the memory of the stack is fully filled which will leads to stack overflow condition 
+
+
+Recursion tree
+when the recursion occurs then it forms a tree like structure that is known as a recursion tree
+visuzalition of that tree :-
+    {inside the stack}
+        main()-------    --> program start and problem ends
+          |         |
+        print(1) <--|
+          |         |
+        print(2) <--|
+          |         |
+        print(3) <--|  (going back to main() function after the base condition hits)
+          |----------
+          
+
+Why Recursion?
+
+it helps us in solving the bigger and complex problem in simple way
+u can convert Recursion solution into itration and visa versa (first solve complex problem in Recursion and convert it into itration to get more optimized solution)
+
+
+// Dynamic programming(DP) in short means if in the recursion calls two or more recursion calls are doing the same work then dont compute it again and again...
+// that is DP plus recursion is very popular topic in interview problems
+
+
+How to understand and approach
+
+imp. -> the variable which is continiously changing that is going to be in function call() in argument  
+identify if you can break down the problem into smaller parts
+write the recurrence relation(return fibonacci(n-1) + fibonacci(n-2)) if needed
+draw the recursive tree
+about the tree :- 
+1. see the flow of function that how they are getting in stack 
+2. identify and focus on left tree call or right tree call
+3. Draw the tree and pointer again and again using pen and paper
+see how the values are returned on each step
+see where the function call will come out, in the end you u will come out of the main function
+
+
+Types of recurrence relations :-
+1. Linear recurrence relation ---> which moves like n-1 or n-2, etc. eg -> fibonacci
+2. Divide and conquore recurrence relation ---> reduce by factore like n/2 etc. eg -> binary search
+
+
+// The pattern of taking some elements and removing some elements is known as subset pattern 
+eg. subset of "abc" -> ["a", "b", "c", "ab", "ac", "bc", "abc", " ] -> here for first element we are ignoring bc and taking a, similarly for others
+
+

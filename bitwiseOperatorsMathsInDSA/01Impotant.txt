@@ -1,0 +1,23 @@
+// learn bit minuplation video one more time
+
+// bit mask is a saperate number(it only contain single 1) or bits which help us get the answer eg. (00000001) or (00001000) etc.
+// last bit is known as LSB(least significant bit) and this bit tells weather a number is even or odd. If LSB is 1 then its a odd number else it is even
+// first bit is known as MSB(most significant bit) and this bit tells weather a number is +ve or -ve. If MSB is 1 then then its a -ve number else it is +ve
+// for finding the range of the any no. of bits -> -2^(n-1) to 2^(n-1) -1
+// if u are doing water jug problem then just remember that if equation's right hand side is coming in floating numbers then it will never be consider as correct water jug problem
+     eg. 2x + 4y = 5 -> not considered as water jug problem because when u take common and compute the solution then RHS will be floating number   
+     eg. 3x + 17y = 5 -> this a water jug problem because when u take common ie. 1 then RHS will not be floating number
+// question 1 -> 13 are bitwise questions
+// question 13 -> are questions
+
+AND(&) (whenever 0 then always 0)  (AND of any binary number with 1 will give u that binary number)
+OR(|) (whenever 1 then always 1)
+NOT(~) (if 0 then 1 and if 1 then 0)
+XOR(^) (if both same then 0 and if both different then 1)  (any number XOR with 1 will give u complement of that number and any number XOR 0 will give u that number)
+XNOR(^) (if both same then 1 and if both different then 0)  
+Leftshift (<<)  (shift a bit towards left and if u shilf a bit towards left then multiply it by 2)  (20<<1)-> means shift in bit in left -> output is 40   (behind process -> 1010 << 1 = 10100) 
+Rightshift (>>)  (shift a bit towards right and if u shilf a bit towards right then divide it by 2) (40>>1)-> means shift in bit in right -> output is 20   (behind process -> 10100 >> 1 = 1010)
+
+// HCF( highest common factor )/GCD of a & b = minimum +ve values of eq(ax + by) when x and y are integers
+// Euclid's algorithm for computing GCD and HCF  -->  [gcd(a,b) = gcd(remender(b,a), a)]
+// LCM( Lowest Common Multiple ) -->  [LCM = (a*b)/HCF]
