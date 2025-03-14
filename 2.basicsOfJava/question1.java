@@ -1,7 +1,6 @@
 // find the largest of the given number 
 import java.util.Scanner;
 
-
 public class question1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -12,9 +11,8 @@ public class question1 {
         
         
         // one approach is this 
-
-    //     if(input1 > input2 && input1 > input3) {
-    //         System.out.println("Input number 1 is the largest element, that is " + input1);
+    // if(input1 > input2 && input1 > input3) {
+    //     System.out.println("Input number 1 is the largest element, that is " + input1);
     // } else if(input2 > input3 && input2 > input1) {
     //     System.out.println("Input number 2 is the largest element, that is " + input2);
     // } else{

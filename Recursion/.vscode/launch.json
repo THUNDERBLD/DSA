@@ -5,6 +5,83 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "SudokuSolver",
+            "request": "launch",
+            "mainClass": "backtracking.SudokuSolver",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "sudokuSolver",
+            "request": "launch",
+            "mainClass": "backtracking.sudokuSolver",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "nKnights",
+            "request": "launch",
+            "mainClass": "backtracking.nKnights",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "nQueen",
+            "request": "launch",
+            "mainClass": "backtracking.nQueen",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "actualBacktracking",
+            "request": "launch",
+            "mainClass": "backtracking.actualBacktracking",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "MazeWithRestrictions",
+            "request": "launch",
+            "mainClass": "backtracking.MazeWithRestrictions",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "Maze",
+            "request": "launch",
+            "mainClass": "backtracking.Maze",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "Maze",
+            "request": "launch",
+            "mainClass": "Backtracking.Maze",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "recursionPermutation",
+            "request": "launch",
+            "mainClass": "recursionPermutation",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "recursionString",
+            "request": "launch",
+            "mainClass": "recursionString",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
+            "type": "java",
+            "name": "recursionQuestion1",
+            "request": "launch",
+            "mainClass": "recursionQuestion1",
+            "projectName": "Recursion_fa44de3b"
+        },
+        {
             "type": "jdk",
             "request": "launch",
             "name": "Launch Java App"

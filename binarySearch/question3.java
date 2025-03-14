@@ -1,3 +1,4 @@
+// Ceiling problem (get the smallest element which is greater then equal to the target value using binary search) in the string elements
 public class question3 {
     
     static int Search(int[] arr, int target){
@@ -21,7 +22,7 @@ public class question3 {
 
     public static void main(String[] args) {
         int[] arr = {'a','c','e','f','h'};
-        int target = 'j';
+        int target = 'd';
         int ans = Search(arr, target);
         if(ans == -1){
             System.out.println("the element is not found");

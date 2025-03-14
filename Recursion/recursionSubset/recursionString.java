@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class recursionString {
     // question 1 -> remove all the a from the string
     static String strFun(String str, int i, String ans){
@@ -25,10 +27,12 @@ public class recursionString {
 
     }
 
-    // question 3 -> print all the sub set of abc string... eg -> "abc" -> ["a", "b", "c", "ab", "ac", "bc", "abc"," "] 
+    //(use Debugger to understand this question's recursion tree) question 3 -> print all the sub set of abc string... eg -> "abc" -> ["a", "b", "c", "ab", "ac", "bc", "abc"," "] 
+    // concept is accept the value or reject the value
+    static ArrayList<String> arrlist = new ArrayList<>();
     static void subSequence(String p, String str){
         if(str.isEmpty()){
-            System.out.println(p);
+            arrlist.add(p);
             return;
         }
         char ch = str.charAt(0);
@@ -44,5 +48,6 @@ public class recursionString {
         System.out.println(ans2);
 
         subSequence("", "abc");
+        System.out.println(arrlist);
     }
 }

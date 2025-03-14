@@ -1,4 +1,8 @@
-
+// Note try to make the recursion tree, it is really effective for understanding the recursion flow of execution in stack
+// About the tree:-
+// 1. See the flow of the function like how they are getting into the stack.
+// 2. Identify and focus on left tree first then once the left tree gives the output then move on to right tree.
+// 3. Sees how the values are returned on each step
 
 public class recursion1{
     // print number 1 to n

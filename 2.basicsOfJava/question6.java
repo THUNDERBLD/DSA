@@ -1,3 +1,4 @@
+// Create a calculator for adding two numbers
 
 import java.util.*;
 
@@ -7,12 +8,12 @@ public class question6 {
         
         for(int i = 1; true ; i++) {
         
-        System.out.print("Enter first number : ");
-        int num1 = sc.nextInt();
-        System.out.print("Enter opearation number : ");
-        String oprator = sc.next();
-        System.out.print("Enter second number : ");
-        int num2 = sc.nextInt();
+            System.out.print("Enter first number : ");
+            int num1 = sc.nextInt();
+            System.out.print("Enter opearation number : ");
+            String oprator = sc.next();
+            System.out.print("Enter second number : ");
+            int num2 = sc.nextInt();
 
         if("+".equals(oprator)){
             int sum = num1 + num2;

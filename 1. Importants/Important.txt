@@ -11,7 +11,7 @@ Randoms
         }
         System.out.println("The maximum element value is " + max);
 2. Java dont have distructure because java contains a garbage collector in automatic memory management, which preforms the work of distructure. 
-3. Java dont support pointers, instead u can use copy of reference memory, because of this java is more secured...
+3. Java dont support pointers, instead u can use copy of reference memory, because of this, java is more secured...
 4. Strings are immutable in java and arrays are mutable in java
 5. IMP ==> Remember in recursion after completion of all the call backs, the backtracking occurred and after backtracking the next line code will execute... (Backtracking pura hona ka bad, us he function ki agli line execute hogi jis line ka user function calling itself ho raha hoga)
 

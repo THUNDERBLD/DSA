@@ -1,3 +1,4 @@
+// Steps to Solve binary search questions
 // First step create a starting and ending index of in the sorted array (only applicable to the sorted or reverse array)
 // Second run a loop from start to end and find the middle element of the array, now check if targetElement is < middleElement => search in the left side from the middle.
 //     else targetedElement > middleElement => search in the right side from the middle element
@@ -17,7 +18,7 @@ public class binarySearch{
             // mid = (start + end)/2  -> we are not using this because it can easily exceads the range of Integer
             int mid = start + ((end - start)/2); // this one can not easily exceads the range of integer
             if(Target < arr[mid]){
-                end = mid - 1; 
+                end = mid - 1;
             } else if(Target > arr[mid]){
                 start = mid + 1;
             } else {

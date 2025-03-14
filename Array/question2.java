@@ -1,4 +1,4 @@
-// get the max element in java
+// get the max element in array
 public class question2 {
 
     public static void main(String[] args) {

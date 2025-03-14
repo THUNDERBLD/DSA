@@ -18,8 +18,6 @@ public class BSinRecursion {
 
 
 
-
-
     // binary search on rotated array
     static int pivot(int[] arr, int i){
         if(arr[i] >= arr[i+1]){
@@ -63,6 +61,33 @@ public class BSinRecursion {
             System.out.println("the pivot element is found at index : "+ rightAns);
         }
 
+    // Another approach for the rotated array binary search algorithm.
+    // this code is wokring perfectly fine and dont overthink it -> watch shradha dede video for understanding rotated array binary search algorithm.
+    // in this question dont worry about the pivot element, algorithm will automatically get that.
+    // static int Bs(int[] arr, int target, int start, int end){
+    //     int mid = start + ((end-start)/2);
+    //     if(start > end){
+    //         return -1;
+    //     }
+    //     if(arr[mid] == target){
+    //         return mid;
+    //     }
+    //     // if the array's left half is sorted then search inside that sorted part
+    //     if(arr[start] <= arr[mid]){
+    //         if(target <= arr[mid] && target >= arr[start]){
+    //             return Bs(arr, target, start, mid -1);
+    //         } else {
+    //             return Bs(arr, target, mid+1, end);
+    //         }
+    //     } else { // if the arrays right half is sorted then search inside that sorted part
+    //         if(target >= arr[mid] && target <= arr[end]){
+    //             return Bs(arr, target, mid+1, end);
+    //         } else {
+    //             return Bs(arr, target, start, mid -1);
+    //         }
+    //     }
+    // }
+    
 
 
     public static void main(String[] args) {
@@ -78,5 +103,11 @@ public class BSinRecursion {
         int[] arr3 = {7,8,9,10,12,1,2,3,4,6};
         int target3 = 4;
         rotatedBinarySearch(arr3, target3, 0, arr3.length-1);
+
+        // for last approach
+        // int[] arr4 = {7,8,9,10,12,1,2,3,4,6};
+        // int target4 = 4;
+        // int ans = Bs(arr3, target3, 0, arr4.length-1);
+        // System.out.println(ans);
     }
 }

@@ -1,14 +1,24 @@
-// Naming convention in java --> java is case sensitive lang
-// keyword always start with small letter
+
 public class dele1{
-    static void display(){
-        System.out.println("It is working correctly");
+    static int bs(int[] arr, int target, int start, int end){
+        for(int i = 0; i < arr.length; i++){
+            int mid = start + ((end - start)/2);
+            if(target < arr[mid]){
+                end = mid - 1;
+            } else if(target > arr[mid]){
+                start = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return end;
     }
+
     static public void main(String[] args) {
-        display();
-        int a = 2;
-        int b = 3;
-        int c = a+b;
-        System.out.println(c);
+        int[] arr = {1,4,5,7,8,9,12};
+        int target = 6;
+        int ans = bs(arr, target, 0, arr.length);
+        System.out.println("THUNDER BLOOD");
+        System.out.println(ans);
     }
 }
