@@ -1,0 +1,2 @@
+// A Linked List is a linear data structure where elements (nodes) are linked using pointers. 
+// Unlike arrays, linked lists do not have a fixed size, making them efficient for dynamic memory allocation.
