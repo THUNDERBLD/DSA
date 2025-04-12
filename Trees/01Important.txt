@@ -1,0 +1,121 @@
+Remember :-
+1. In binary trees left node is always smaller then parent node and right is always bigger than parent node.
+2. Properties that will help you in the questions
+   2.1 -> In a perfect binary tree, height = h then total nodes = [2^(h+1) - 1] -> height is top node to bottom node, so basically it is similar level of trees. (both height and level starts from 0)
+   2.2 -> Total no. of leaf nodes = 2^(h), where h = height or level of tree.
+   2.3 -> If N = no. of leafs then there must be atleast [log2(N) + 1] levels in that tree. 
+   2.4 -> In strict BT, N = leaf nodes, then N - 1 = internal Nodes
+   2.5 -> No of leaf nodes = 1 + No. of internal nodes with 2 children (not including the root node)
+
+
+✅ What is a Tree (Data Structure)?
+A tree is a non-linear hierarchical data structure that consists of nodes connected by edges. 
+It starts with a root node and expands into subtrees of children, forming a tree-like structure (duh, obviously).
+
+Think of:
+Folders and files in a file system
+DOM in HTML
+Organizational charts
+
+
+🔍 Basic Properties (Terminologies)
+Root: The topmost node.
+Parent: Node with child nodes.
+Child: Node that descends from a parent.
+Leaf: Node with no children.
+Edge: Connection between parent and child.
+Height: Longest path from root to a leaf.
+Depth: Distance from root to that node.
+Level: Depth + 1
+Degree: No of nodes connected the current node. each node have its own degree.
+
+
+🌱 Types of Trees
+Binary Tree: Max 2 children per node.
+Binary Search Tree (BST): Left child < node < right child.
+AVL Tree: Self-balancing BST.
+Red-Black Tree: Self-balancing with color rules.
+Heap: Min-heap or Max-heap (priority queue).
+Trie: Used in prefix matching (autocomplete).
+N-ary Tree: Each node can have up to N children.
+Segment Tree / Fenwick Tree: Used in range queries.
+
+⚙️ Common Operations & Time Complexities
+Operation	        Binary Tree	    Binary Search Tree (Avg)	Balanced BST (AVL, RBT)
+Insert	                O(n)	        O(log n)	                O(log n)
+Delete	                O(n)	        O(log n)	                O(log n)
+Search	                O(n)	        O(log n)	                O(log n)
+Traversal (DFS/BFS)	    O(n)	          O(n)	                      O(n)
+n = number of nodes
+
+📦 Props / Features
+Hierarchical data representation
+Allows recursive traversal
+Supports logarithmic operations (if balanced)
+Used in expression parsing, file systems, auto-complete, AI decision trees, etc.
+
+👍 Advantages
+Fast search (if balanced)
+Hierarchical structure fits real-world data
+Easy insertion/deletion (better than arrays in some cases)
+Efficient traversal algorithms (DFS, BFS)
+
+👎 Disadvantages
+Pointer overhead (especially in sparse trees)
+Balancing overhead (in self-balancing trees)
+Worse performance if unbalanced (BST can degrade to linked list: O(n))
+More complex implementation compared to arrays/lists
+
+🧠 Basics to Remember
+Trees are recursive by nature
+Always check if the tree is balanced to avoid performance hits
+
+Traversals matter:
+In-order: Left → Root → Right (used in BST for sorted order)
+Pre-order: Root → Left → Right (used for copying trees)
+Post-order: Left → Right → Root (used for deleting trees)
+Level-order: BFS (queue based)
+
+
+Type of Binary trees
+1. Complete Binary Trees -> All levels are fulled except the last one and last one will only gets filled from left to right, if there is any gap while filling the tree from left to right then it is not the complete binary tree.
+eg :-        
+           1
+         /   \
+        /     \
+       2       3
+      / \     / 
+     4   5   6
+
+2. Full Binary Tree -> Each node have either 0 children or 2 children, we use this in compression in Halfman Coding and in segment trees.
+eg :-
+        1
+      /   \
+     2     3
+    / \   
+   4   5 
+      / \
+     6   7
+(Huffman coding is a lossless data compression algorithm that assigns variable-length codes to characters based on their frequency of occurrence)
+
+3. Perfect Binary Tree -> All the nodes except leafs must have 2 childrens and all leaf nodes are on same level (basically they dont have any children on last level).
+eg :-
+           1
+         /   \
+        /     \
+      2         3
+     / \       / \
+    4   5     6   7
+
+4. Balanced/HightBalanced Binary Tree -> when Height difference ≤ 1 at all nodes then it is balanced BT (basically average height we have is O(log n)).
+eg :- AVL and Red and Black Binary tree
+
+5. Skewed/Degenerate/Pathological Binary tree -> Every node have only one child node. avg height O(n) 
+eg :-
+    1
+     \
+      2
+       \
+        3
+         \
+          4
